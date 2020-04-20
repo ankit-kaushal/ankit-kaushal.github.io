@@ -1,20 +1,21 @@
-<!-- Original author: @ajlkn https://template25.carrd.co -->
-<!-- Background from: https://codepen.io/anon/pen/BYBwWZ -->
-<!-- Modified by: Ankit K. -->
 <!DOCTYPE HTML>
-<html lang="en">
+<!-- Original design from: https://template32.carrd.co/ -->
+<!-- Background: https://codepen.io/loktar00/pen/uEJKl -->
+<html>
 	<head>
 		<title>Ankit Kaushal</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
-		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,200,200italic" rel="stylesheet" type="text/css" />
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-		<link href="main.css" rel="stylesheet" type="text/css" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+		<link rel="stylesheet" href="assets/fonts/CarrdIcons.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="assets/css/background.css" />
 		<link rel="icon" href="Ankit.ico">
 		<noscript>
-			<link href="noscript.css" rel="stylesheet" type="text/css" />
+			<link rel="stylesheet" href="assets/css/noscript.css" />
 		</noscript>
-		
 	</head>
 	<body class="is-loading">
 		<div id="wrapper">
@@ -22,30 +23,36 @@
 				<div class="inner">
 					<header id="header">
 						<ul class="icons" id="icons01" align="center" class="socialbtns">
-							<li><a href="MyResume.pdf" class="n04 fa fa-lg fa-file-text"></a></li>
-							<li><a href="https://github.com/ankit-kaushal" class="n01 fa fa-lg fa-github"></a></li>
-							<li><a href="https://www.linkedin.com/in/ankit-kaushal/" class="n02 fa fa-lg fa-linkedin"></a></li>
+							<li><a href="MyResume.pdf" class="n03 fa fa-lg fa-file-text"></a></li>
+							<li><a href="https://github.com/ankit-kaushal" class="n03 fa fa-lg fa-github"></a></li>
+							<li><a href="https://www.linkedin.com/in/ankit-kaushal/" class="n03 fa fa-lg fa-linkedin-square"></a></li>
 							<li><a href="mailto:ankitkaushal882@gmail.com" class="n03 fa fa-lg fa-envelope"></a></li>
+							<li><a href="https://ankitkaushal.me/" class="n03 fa fa-lg fa-user"></a></li>
 						</ul>
 						<hr id="divider01" />
 					</header>
+					<!-- Home Section -->
 					<section id="home-section">
 						<div id="image01" class="image"><img src="image.jpg" alt=""></div>
 						<h1 id="text03">Ankit Kaushal</h1>
 						<hr id="divider02" />
 						<p id="text04">Coder  •  Designer  •  Thinker</p>
 					</section>
+					<!-- About Section -->
 					<section id="about-section">
 						<p id="text05">About</p>
-						<p id="text06"><span>Hello, I’m Ankit Kaushal. I’m a Computer Science Student at IIIT, Kalyani, West Bengal, India. I am a fan of technology, web development, and innovation. I’m also interested in programming and design. ❤</span><br /> <br /> <span>
+						<p id="text06"><span>I am a 2nd year B.Tech in CSE student at Indian Institute of Information Technology Kalyani. I am a passionate programmer and an avid learner. I am a fan of technology, web development, and innovation. I always try to keep myself updated with latest programming languages and algorithms. ❤</span><br /> <br /> <span>
 						</p>
+						<p id="text07"><span>To know more about me click here : </span><span><ul class="icons" id="icons01" align="center" class="socialbtns"><li><a href="https://ankitkaushal.me/about.html" class="n02 fa fa-lg fa-laptop"></a></li></ul></span></p>
 					</section>
+					<!-- Work Section -->
 					<section id="work-section">
 						<p id="text01">Work</p>
-						<p id="text07"><span><strong>Projects:</strong>Will be updated.</span> 
-							</br> </br> <span>All projects, can be found <u><a href="https://github.com/ankit-kaushal">here</a></u>.</span>
+						<p id="text07"><span><strong>Projects : </strong>All projects, can be found here : </span> 
+							<span><ul class="icons" id="icons01" align="center" class="socialbtns"><li><a href="https://ankitkaushal.me/about.html" class="n02 fa fa-lg fa-laptop"></a></li></ul></span>
 						</p>
 					</section>
+					<!-- Footer -->
 					<footer id="footer">
 						<hr id="divider03" />
 						<ul class="buttons" id="buttons01">
@@ -57,9 +64,178 @@
 				</div>
 			</div>
 		</div>
-		<script src="main.js"></script>
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js'></script>
-		<script src="index.js"></script>
-		
+		<script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript" src="assets/js/background.js"></script>
 	</body>
 </html>
+
+<canvas id="bgCanvas"></canvas>
+<canvas id="terCanvas"></canvas>
+
+
+<style>
+body, html {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+canvas {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:0;
+}
+</style>
+<script>
+  (function() {
+    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || 
+								  window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function( callback ){
+                window.setTimeout(callback, 1000 / 60);
+              };
+	  window.requestAnimationFrame = requestAnimationFrame;
+	})();
+
+	// Terrain stuff.
+	var terrain = document.getElementById("terCanvas"),
+		background = document.getElementById("bgCanvas"),
+		terCtx = terrain.getContext("2d"),
+		bgCtx = background.getContext("2d"),
+		width = window.innerWidth,
+		height = document.body.offsetHeight;
+    (height < 400)?height = 400:height;
+
+	terrain.width = background.width = width;
+	terrain.height = background.height = height;
+
+	// Some random points
+	var points = [],
+		displacement = 140,
+		power = Math.pow(2,Math.ceil(Math.log(width)/(Math.log(2))));
+	
+	// set the start height and end height for the terrain
+	points[0] = (height - (Math.random()*height/2))-displacement;
+	points[power] = (height - (Math.random()*height/2))-displacement;
+
+	// create the rest of the points
+	for(var i = 1; i<power; i*=2){
+		for(var j = (power/i)/2; j <power; j+=power/i){
+			points[j] = ((points[j - (power/i)/2] + points[j + (power/i)/2]) / 2) + Math.floor(Math.random()*-displacement+displacement );
+		}
+		displacement *= 0.6;
+	}
+
+	// draw the terrain
+	terCtx.beginPath();
+					
+	for(var i = 0; i<=width; i++){
+		if(i === 0){
+			terCtx.moveTo(0, points[0]);
+		}else if(points[i] !== undefined){
+			terCtx.lineTo(i, points[i]);
+		}
+	}
+
+	terCtx.lineTo(width,terrain.height);
+	terCtx.lineTo(0,terrain.height);
+	terCtx.lineTo(0,points[0]);
+	terCtx.fill();
+
+
+	// Second canvas used for the stars
+	bgCtx.fillStyle = '#05004c';
+	bgCtx.fillRect(0,0,width,height);
+
+	// stars
+	function Star(options){
+		this.size = Math.random()*2;
+		this.speed = Math.random()*.1;
+		this.x = options.x;
+		this.y = options.y;
+	}
+
+	Star.prototype.reset = function(){
+		this.size = Math.random()*2;
+		this.speed = Math.random()*.1;
+		this.x = width;
+		this.y = Math.random()*height;
+	}
+	
+	Star.prototype.update = function(){
+		this.x-=this.speed;
+		if(this.x<0){
+		  this.reset();
+		}else{
+		  bgCtx.fillRect(this.x,this.y,this.size,this.size); 
+		}
+	}
+	
+	function ShootingStar(){
+		this.reset();
+	}
+	
+	ShootingStar.prototype.reset = function(){
+		this.x = Math.random()*width;
+		this.y = 0;
+		this.len = (Math.random()*80)+10;
+		this.speed = (Math.random()*10)+6;
+		this.size = (Math.random()*1)+0.1;
+    // this is used so the shooting stars arent constant
+		this.waitTime =  new Date().getTime() + (Math.random()*3000)+500;
+		this.active = false;
+	}
+	
+	ShootingStar.prototype.update = function(){
+		if(this.active){
+			this.x-=this.speed;
+			this.y+=this.speed;
+			if(this.x<0 || this.y >= height){
+			  this.reset();
+			}else{
+			bgCtx.lineWidth = this.size;
+				bgCtx.beginPath();
+				bgCtx.moveTo(this.x,this.y);
+				bgCtx.lineTo(this.x+this.len, this.y-this.len);
+				bgCtx.stroke();
+			}
+		}else{
+			if(this.waitTime < new Date().getTime()){
+				this.active = true;
+			}			
+		}
+	}
+
+	var entities = [];
+	
+	// init the stars
+	for(var i=0; i < height; i++){
+		entities.push(new Star({x:Math.random()*width, y:Math.random()*height}));
+	}
+  
+	// Add 2 shooting stars that just cycle.
+	entities.push(new ShootingStar());
+	entities.push(new ShootingStar());
+	
+	//animate background
+	function animate(){
+		bgCtx.fillStyle = '#05004c';
+		bgCtx.fillRect(0,0,width,height);
+		bgCtx.fillStyle = '#ffffff';
+		bgCtx.strokeStyle = '#ffffff';
+
+		var entLen = entities.length;
+	  
+		while(entLen--){
+			entities[entLen].update();
+		}
+		
+		requestAnimationFrame(animate);
+	}
+	animate();
+
+
+</script>
