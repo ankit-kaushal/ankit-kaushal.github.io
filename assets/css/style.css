@@ -269,7 +269,6 @@ body.is-loading #main {
     font-size: 0.625em;
     font-family: 'Source Sans Pro';
     letter-spacing: 0.225rem;
-    padding-left: calc(0.225rem + 1.125rem);
     font-weight: 400;
     border-radius: 1.625rem;
 }
