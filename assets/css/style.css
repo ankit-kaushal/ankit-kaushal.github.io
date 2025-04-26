@@ -277,24 +277,24 @@ body.is-loading #main {
     border: solid 1px #CCCCCC;
 }
 #buttons01 .n01:hover {
-    color: #000;
-    border-color: #000;
+    color: #d1d1d1;
+    border-color: #d1d1d1;
 }
 #buttons01 .n02 {
     color: #FFF;
     border: solid 1px #CCCCCC;
 }
 #buttons01 .n02:hover {
-    color: #000;
-    border-color: #000;
+    color: #d1d1d1;
+    border-color: #d1d1d1;
 }
 #buttons01 .n03 {
     color: #FFF;
     border: solid 1px #CCCCCC;
 }
 #buttons01 .n03:hover {
-    color: #000;
-    border-color: #000;
+    color: #d1d1d1;
+    border-color: #d1d1d1;
 }
 hr {
     width: 100%;
@@ -496,16 +496,16 @@ h1, h2, h3, p {
 	color: #FFF
 }
 #icons01 .n02:hover {
-    border-color: #000;
-	color: #000
+    border-color: #d1d1d1;
+	color: #d1d1d1
 }
 #icons01 .n03 {
    border: solid 1px #FFF;
 	color: #FFF
 }
 #icons01 .n03:hover {
-    border-color: #000;
-	color: #000
+    border-color: #d1d1d1;
+	color: #d1d1d1
 }
 #icons01 .n04 {
     border: solid 1px #FFF;
